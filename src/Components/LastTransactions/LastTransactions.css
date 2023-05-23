@@ -1,0 +1,19 @@
+th{
+    padding: 2rem;
+}
+
+.last-transactions{
+    width: 40rem;
+}
+
+.last-transactions-title{
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.last-transactions-card{
+    width: 80%;
+    border-radius: 1rem;
+}
+

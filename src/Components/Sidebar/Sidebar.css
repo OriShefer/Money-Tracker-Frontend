@@ -1,0 +1,13 @@
+.sidebar{
+    width: 16rem;
+    height: 100%;
+    top:0;
+}
+
+.title{
+    color: black;
+}
+
+.active{
+    color: rgba(34, 34, 96, 1)
+}

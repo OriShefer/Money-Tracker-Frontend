@@ -1,0 +1,19 @@
+.content{
+    margin-left: 15rem;
+}
+
+.chart-stats-con{
+    display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        margin-left: 5rem;
+        margin-top: 2rem;
+}
+.saving-last-con{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin-left: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

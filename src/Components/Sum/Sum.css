@@ -1,0 +1,14 @@
+.sum{
+    width: 18rem;
+    background-color: white;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+  
+  .sum:hover {
+    transform: scale(1.05);
+  }
+  

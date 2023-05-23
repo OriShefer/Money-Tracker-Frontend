@@ -1,0 +1,41 @@
+input.invalid{
+    border-color: red;
+    background-color: #ffd7d7;
+}
+
+select.invalid{
+    border-color: red;
+    background-color: #ffd7d7;
+}
+
+.custom-button-success {
+    margin-top: 1.3rem;
+    padding: 0;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-button-success:hover {
+    background-color: #55a23b;
+  }
+
+  .custom-button-danger {
+    margin-top: 1.3rem;
+    padding: 0;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-button-danger:hover {
+    background-color: #fd1c1c;
+  }
+  
+
