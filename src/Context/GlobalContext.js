@@ -2,7 +2,8 @@ import React, {useContext, useState } from "react"
 import axios from 'axios'
 
 
-const BASE_URL = "http://localhost:3000/api/";
+//const BASE_URL = "http://localhost:3000/api/";
+const BASE_URL = "https://Money-Tracker.onrender.com";
 const INCOME = 'income'
 const EXPENSE = 'expense'
 const CATEGORY = 'category'
