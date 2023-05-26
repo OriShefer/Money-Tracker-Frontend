@@ -16,9 +16,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" exact element = {<> <Sidebar active = {1} /> <Content /> </> }/>
-      <Route path="/add-income" exact  element ={<>  <Sidebar active = {2} /> <TransactionsPage type = {INCOME}/></>} />
-      <Route path="/add-expense" exact element = {<> <Sidebar active = {3}/> <TransactionsPage type={EXPENSE}/> </>}/>
-      <Route path="/add-saving" exact element = {<> <Sidebar active = {4}/> <SavingsPage/> </>}/>
+      <Route path="/incomes" exact  element ={<>  <Sidebar active = {2} /> <TransactionsPage type = {INCOME}/></>} />
+      <Route path="/expenses" exact element = {<> <Sidebar active = {3}/> <TransactionsPage type={EXPENSE}/> </>}/>
+      <Route path="/savings" exact element = {<> <Sidebar active = {4}/> <SavingsPage/> </>}/>
       <Route path="*" element = {<> <Sidebar active = {1} /> <Content /> </> }/>
     </Routes>
   );
