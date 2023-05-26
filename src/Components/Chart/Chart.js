@@ -7,7 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js/auto";
+} from "chart.js";
 
 import { Bar } from "react-chartjs-2";
 import { useGlobalContext } from "../../Context/GlobalContext";
