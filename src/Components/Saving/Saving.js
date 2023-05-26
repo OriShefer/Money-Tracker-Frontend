@@ -2,7 +2,7 @@ import './Saving.css'
 
 function Saving(props) {
 
-    const progressWidth = Math.round((props.currentAmount / props.destinationAmount) * 100)
+    const progressWidth = Math.floor((props.currentAmount / props.destinationAmount) * 100)
 
   return (
     <div className="saving-card card me-5">
