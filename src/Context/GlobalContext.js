@@ -2,8 +2,8 @@ import React, {useContext, useState } from "react"
 import axios from 'axios'
 
 
-const BASE_URL = "http://localhost:3000/api/";
-//const BASE_URL = "https://money-tracker-backend-zdl7.onrender.com/api/";
+//const BASE_URL = "http://localhost:3000/api/";
+const BASE_URL = "https://money-tracker-backend-zdl7.onrender.com/api/";
 const INCOME = 'income'
 const EXPENSE = 'expense'
 const CATEGORY = 'category'
