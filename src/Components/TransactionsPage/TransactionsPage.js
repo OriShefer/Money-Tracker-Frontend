@@ -6,10 +6,10 @@ import React from "react";
 
 function TransactionsPage(props) {
   const {
-    getIncomeAmount,
-    incomeTotalAmount,
-    getExpenseAmount,
-    expenseTotalAmount,
+    getMonthlyIncomeAmount,
+    monthlyIncomeTotalAmount,
+    getMonthlyExpenseAmount,
+    monthlyExpenseTotalAmount,
     INCOME,
     EXPENSE,
     setTextColor,
@@ -23,13 +23,13 @@ function TransactionsPage(props) {
 
   useEffect(() => {
     if(props.type === INCOME){
-      getIncomeAmount();
+      getMonthlyIncomeAmount();
       setTitle("Incomes");
       setTotalTitle("Total Incomes:");
     }
 
     if(props.type === EXPENSE){
-      getExpenseAmount();
+      getMonthlyExpenseAmount();
       setTitle("Expenses");
       setTotalTitle("Total Expenses:");
     }
@@ -46,7 +46,7 @@ function TransactionsPage(props) {
               <div style={{ textAlign: "center" }} className="card-body ">
                 {totalTitle + " "}
                 <span style={{ color: setTextColor(props.type), fontWeight: "bold" }} >
-                  {expenseTotalAmount}{incomeTotalAmount}₪
+                  {monthlyExpenseTotalAmount}{monthlyIncomeTotalAmount}₪
                 </span>
               </div>
             </div>

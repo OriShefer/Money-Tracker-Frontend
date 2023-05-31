@@ -2,8 +2,8 @@ import React, {useContext, useState } from "react"
 import axios from 'axios'
 
 
-//const BASE_URL = "http://localhost:3000/api/";
-const BASE_URL = "https://money-tracker-backend-zdl7.onrender.com/api/";
+const BASE_URL = "http://localhost:3000/api/";
+//const BASE_URL = "https://money-tracker-backend-zdl7.onrender.com/api/";
 const INCOME = 'income'
 const EXPENSE = 'expense'
 const CATEGORY = 'category'
@@ -18,11 +18,14 @@ export const GlobalProvider = (props) => {
     const [incomes,setIncomes] = useState([])
     const [expenses,setExpenses] = useState([])
 
-    const [incomeTotalAmount, setIncomeTotalAmount] = useState([])
-    const [expenseTotalAmount, setExpenseTotalAmount] = useState([])
+    const [monthlyIncomes,setMonthlyIncomes] = useState([])
+    const [monthlyExpenses,setMonthlyExpenses] = useState([])
 
-    const [incomesByCategoryAmount, setIncomesByCategoryAmount] = useState([])
-    const [expensesByCategoryAmount, setExpensesByCategoryAmount] = useState([])
+    const [monthlyIncomeTotalAmount, setMonthlyIncomeTotalAmount] = useState([])
+    const [monthlyExpenseTotalAmount, setMonthlyExpenseTotalAmount] = useState([])
+
+    const [monthlyIncomesByCategoryAmount, setIncomesByCategoryAmount] = useState([])
+    const [monthlyExpensesByCategoryAmount, setExpensesByCategoryAmount] = useState([])
 
     const [lastTransactions,setLastTransactions] = useState([])
 
@@ -51,38 +54,54 @@ export const GlobalProvider = (props) => {
     }
 
 
-    const getIncomeAmount = async () => {
-        const response = await axios.get(`${BASE_URL}${INCOME}/get-incomes`)
+    const getMonthlyIncomeAmount = async () => {
+        const response = await axios.get(`${BASE_URL}${INCOME}/get-monthly-incomes`)
             .catch((err) =>{
                 setError(err.response.data.message)
             });
            
         let totalAmount = 0;
         response.data.forEach((income) => {totalAmount+=income.amount});
-        setIncomeTotalAmount(totalAmount);
+        setMonthlyIncomeTotalAmount(totalAmount);
 
     }
 
-    const getExpenseAmount = async () => {
-        const response = await axios.get(`${BASE_URL}${EXPENSE}/get-expenses`)
+    const getMonthlyExpenseAmount = async () => {
+        const response = await axios.get(`${BASE_URL}${EXPENSE}/get-monthly-expenses`)
             .catch((err) =>{
                 setError(err.response.data.message)
             });
         let totalAmount = 0;
         response.data.forEach((expense) => {totalAmount+=expense.amount});
-        setExpenseTotalAmount(totalAmount);
+        setMonthlyExpenseTotalAmount(totalAmount);
     }
 
-    const getIncomesByCategoryAmount = async () => {
-        const response = await axios.get(`${BASE_URL}${INCOME}/get-incomes-category`)
+    const getMonthlyIncomes = async () => {
+        const response = await axios.get(`${BASE_URL}${INCOME}/get-monthly-incomes`)
+            .catch((err) =>{
+                setError(err.response.data.message)
+            });
+            setMonthlyIncomes(response.data);
+    }
+
+    const getMonthlyExpenses =  async () => {
+        const response = await axios.get(`${BASE_URL}${EXPENSE}/get-monthly-expenses`)
+            .catch((err) =>{
+                setError(err.response.data.message)
+            });
+            setMonthlyExpenses(response.data);
+    }
+
+    const getMonthlyIncomesByCategoryAmount = async () => {
+        const response = await axios.get(`${BASE_URL}${INCOME}/get-monthly-incomes-category`)
             .catch((err) =>{
                 setError(err.response.data.message)
             });
         setIncomesByCategoryAmount(response.data);
     }
     
-    const getExpensesByCategoryAmount = async () => {
-        const response = await axios.get(`${BASE_URL}${EXPENSE}/get-expenses-category`)
+    const getMonthlyExpensesByCategoryAmount = async () => {
+        const response = await axios.get(`${BASE_URL}${EXPENSE}/get-monthly-expenses-category`)
             .catch((err) =>{
                 setError(err.response.data.message)
             });
@@ -215,14 +234,18 @@ export const GlobalProvider = (props) => {
             incomes,
             getExpenses,
             expenses,
-            getIncomeAmount,
-            incomeTotalAmount,
-            getExpenseAmount,
-            expenseTotalAmount,
-            getIncomesByCategoryAmount,
-            incomesByCategoryAmount,
-            getExpensesByCategoryAmount,
-            expensesByCategoryAmount,
+            getMonthlyIncomeAmount,
+            monthlyIncomeTotalAmount,
+            getMonthlyExpenseAmount,
+            monthlyExpenseTotalAmount,
+            getMonthlyIncomes,
+            monthlyIncomes,
+            getMonthlyExpenses,
+            monthlyExpenses,
+            getMonthlyIncomesByCategoryAmount,
+            monthlyIncomesByCategoryAmount,
+            getMonthlyExpensesByCategoryAmount,
+            monthlyExpensesByCategoryAmount,
             getIncomeCategories,
             incomeCategories,
             getExpenseCategories,

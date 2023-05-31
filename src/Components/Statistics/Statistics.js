@@ -12,22 +12,22 @@ function Statistics() {
  
   const [title, setTitle] = useState(incomeState);
 
-  const { getIncomesByCategoryAmount, incomesByCategoryAmount, getExpensesByCategoryAmount, expensesByCategoryAmount } = useGlobalContext();
+  const { getMonthlyIncomesByCategoryAmount, monthlyIncomesByCategoryAmount, getMonthlyExpensesByCategoryAmount, monthlyExpensesByCategoryAmount } = useGlobalContext();
   const [content,setContent] = useState([])
 
 
   useEffect(() => {
-      getIncomesByCategoryAmount();     
-      getExpensesByCategoryAmount();
+    getMonthlyIncomesByCategoryAmount();     
+    getMonthlyExpensesByCategoryAmount();
   },[])
 
 useEffect(() => {
   if(title === incomeState)
   {
-    if(incomesByCategoryAmount.length === 0){
+    if(monthlyIncomesByCategoryAmount.length === 0){
       setContent(<h2 className="statistics-empty">I dont know</h2>)
     }else{
-      setContent(incomesByCategoryAmount.map((category) => (
+      setContent(monthlyIncomesByCategoryAmount.map((category) => (
         <CategorySum
         key = {category._id}
         category = {category._id}
@@ -38,14 +38,14 @@ useEffect(() => {
     
   }
 
-}, [incomesByCategoryAmount,title])
+}, [monthlyIncomesByCategoryAmount,title])
 
 useEffect(() => {
   if(title === expenseState){
-      if(expensesByCategoryAmount.length === 0){
+      if(monthlyExpensesByCategoryAmount.length === 0){
         setContent(<h2 className="statistics-empty">I dont know</h2>)
       }else{
-        setContent(expensesByCategoryAmount.map((category) => (
+        setContent(monthlyExpensesByCategoryAmount.map((category) => (
           <CategorySum
           key = {category._id}
           category = {category._id}
